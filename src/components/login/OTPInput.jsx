@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import otp_icon from 'C:/Users/jangi/OneDrive/Desktop/PROJECTS/stock market/stock-dashboard-master/src/assets/otp.png'
-import backgroundVideo from 'C:/Users/jangi/OneDrive/Desktop/PROJECTS/stock market/stock-dashboard-master/src/assets/video.mp4';
+import otp_icon from '../assests/otp.png'
+import backgroundVideo from '../assests/video.mp4';
 import './login.css';
 
 export default function OTPInput({ email, otp, setPage }) {
@@ -38,7 +38,7 @@ export default function OTPInput({ email, otp, setPage }) {
             <form>
               <div className="inputs">
                 <div className="input">
-                  <img src={otp_icon} className="img1" />
+                  <img src={otp_icon} className="img1" alt="nothing"/>
                   <input type="text" inputmode="numeric" placeholder="Enter OTP here" id="otp" />
                 </div>               
                 <div>

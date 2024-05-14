@@ -8,7 +8,7 @@ import Navigation from './navigation';
 import Pass from "./components/login/forget";
 import OTP from "./components/login/OTPInput";
 import Reset from "./components/login/Reset";
-import Terms from "./componenets/login/terms";
+
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -23,7 +23,7 @@ function App() {
         <Route path="/forget" element={<Pass />} />
         <Route path="/otp" element={<OTP />} />
         <Route path="/reset" element={<Reset />} />
-        <Route path="/terms/" element={<Terms/>}>
+        
         <Route 
           path="/dash" 
           element={<ThemeContext.Provider value={{ darkMode, setDarkMode }}>

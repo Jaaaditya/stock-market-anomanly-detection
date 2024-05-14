@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './login.css';
-import email_icon from 'C:/Users/jangi/OneDrive/Desktop/PROJECTS/stock market/stock-dashboard-master/src/assets/email.png';
-import user_icon from 'C:/Users/jangi/OneDrive/Desktop/PROJECTS/stock market/stock-dashboard-master/src/assets/person.png';
-import password_icon from 'C:/Users/jangi/OneDrive/Desktop/PROJECTS/stock market/stock-dashboard-master/src/assets/password.png';
-import backgroundVideo from 'C:/Users/jangi/OneDrive/Desktop/PROJECTS/stock market/stock-dashboard-master/src/assets/video.mp4'; 
+import email_icon from '../assests/email.png';
+import user_icon from '../assests/person.png';
+import password_icon from '../assests/password.png';
+import backgroundVideo from '../assests/video.mp4'; 
 
 
 const Login = () => {

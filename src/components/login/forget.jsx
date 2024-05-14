@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './login.css';
-import email_icon from 'C:/Users/jangi/OneDrive/Desktop/PROJECTS/stock market/stock-dashboard-master/src/assets/email.png';
-import backgroundVideo from 'C:/Users/jangi/OneDrive/Desktop/PROJECTS/stock market/stock-dashboard-master/src/assets/video.mp4'; 
+import email_icon from '../assests/email.png';
+import backgroundVideo from '../assests/video.mp4'; 
 
 const ForgetPassword = () => {
   const email = useRef();

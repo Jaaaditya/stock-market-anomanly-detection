@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundVideo from 'C:/Users/jangi/OneDrive/Desktop/PROJECTS/stock market/stock-dashboard-master/src/assets/video.mp4'; 
+import backgroundVideo from '../assests/video.mp4'; 
 
 export default function Reset({ setPage }) {
   function changePassword() {
