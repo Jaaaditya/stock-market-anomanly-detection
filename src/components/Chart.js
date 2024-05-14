@@ -21,11 +21,8 @@ import { chartConfig } from "../constants/config";
 
 const Chart = () => {
   const [filter, setFilter] = useState("1W");
-
   const { darkMode } = useContext(ThemeContext);
-
   const { stockSymbol } = useContext(StockContext);
-
   const [data, setData] = useState([]);
 
   const formatData = (data) => {
@@ -40,10 +37,8 @@ const Chart = () => {
   useEffect(() => {
     const getDateRange = () => {
       const { days, weeks, months, years } = chartConfig[filter];
-
       const endDate = new Date();
       const startDate = createDate(endDate, -days, -weeks, -months, -years);
-
       const startTimestampUnix = convertDateToUnixTimestamp(startDate);
       const endTimestampUnix = convertDateToUnixTimestamp(endDate);
       return { startTimestampUnix, endTimestampUnix };
@@ -84,7 +79,7 @@ const Chart = () => {
           </li>
         ))}
       </ul>
-      <ResponsiveContainer>
+      <ResponsiveContainer width="100%" height={400}>
         <AreaChart data={data}>
           <defs>
             <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
@@ -104,16 +99,16 @@ const Chart = () => {
             contentStyle={darkMode ? { backgroundColor: "#111827" } : null}
             itemStyle={darkMode ? { color: "#818cf8" } : null}
           />
+          <XAxis dataKey="date" />
+          <YAxis />
           <Area
             type="monotone"
             dataKey="value"
-            stroke="#312e81"
+            stroke={darkMode ? "#818cf8" : "#312e81"}
             fill="url(#chartColor)"
             fillOpacity={1}
-            strokeWidth={0.5}
+            strokeWidth={2}
           />
-          <XAxis dataKey="date" />
-          <YAxis domain={["dataMin", "dataMax"]} />
         </AreaChart>
       </ResponsiveContainer>
     </Card>
