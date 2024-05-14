@@ -18,14 +18,14 @@ function App() {
     <Router>
       <Navigation />
       <Routes>
-        <Route path="/" element={<Login />} />
+      <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forget" element={<Pass />} />
         <Route path="/otp" element={<OTP />} />
         <Route path="/reset" element={<Reset />} />
-        <Route path="/terms/" element={<Terms/>}>
+        <Route path="/terms" element={<Terms />} /> {/* Adjust the component reference */}
         <Route 
-          path="/dash" 
+          path="/dash"
           element={<ThemeContext.Provider value={{ darkMode, setDarkMode }}>
           <StockContext.Provider value={{ stockSymbol, setStockSymbol }}>
             <Dashboard />
