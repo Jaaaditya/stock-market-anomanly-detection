@@ -4,7 +4,7 @@
 
 @layer components {
   .custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-track {
