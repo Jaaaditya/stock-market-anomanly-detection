@@ -8,29 +8,33 @@ import Navigation from './navigation';
 import Pass from "./components/login/forget";
 import OTP from "./components/login/OTPInput";
 import Reset from "./components/login/Reset";
+import AboutUs from './components/login/aboutus';
 
-
-function App() {
+const DashboardWrapper = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [stockSymbol, setStockSymbol] = useState("MSFT");
 
   return (
+    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+      <StockContext.Provider value={{ stockSymbol, setStockSymbol }}>
+        <Dashboard />
+      </StockContext.Provider>
+    </ThemeContext.Provider>
+  );
+};
+
+function App() {
+  return (
     <Router>
       <Navigation />
       <Routes>
-      <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/forget" element={<Pass />} />
         <Route path="/otp" element={<OTP />} />
         <Route path="/reset" element={<Reset />} />
-
-        <Route 
-          path="/dash"
-          element={<ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-          <StockContext.Provider value={{ stockSymbol, setStockSymbol }}>
-            <Dashboard />
-          </StockContext.Provider>
-        </ThemeContext.Provider>} />
+        <Route path="/aboutus" element={<AboutUs/>} />
+        <Route path="/dash" element={<DashboardWrapper />} />
       </Routes>
     </Router>
   );

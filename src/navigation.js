@@ -6,11 +6,12 @@ const Navigation = () => {
     <nav>
       <ul>
         
-        <li><Link to="/DashBoard">Dashboard</Link></li>
+        <li><Link to="/dash">Dashboard</Link></li>
         <li><Link to="/">Login</Link></li>
         <li><Link to="/forget">Pass</Link></li>
         <li><Link to="/otp">OTP</Link></li>
         <li><Link to="/reset">Reset</Link></li>
+        <li><Link to="/aboutus">AboutUs</Link></li>
       </ul>
     </nav>
   );

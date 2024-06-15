@@ -9,7 +9,7 @@ import backgroundVideo from '../assests/video.mp4';
 const Login = () => {
   const [action, setAction] = useState("Login");
   const handleDoubleClick = () => {
-    window.location.href = '/DashBoard'; 
+    window.location.href = '/dash'; 
   };
   
 

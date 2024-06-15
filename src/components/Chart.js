@@ -57,7 +57,7 @@ const Chart = () => {
         setData(formatData(result));
       } catch (error) {
         setData([]);
-        console.log(error);
+        console.error("Error fetching historical data:", error);
       }
     };
 
@@ -72,9 +72,7 @@ const Chart = () => {
             <ChartFilter
               text={item}
               active={filter === item}
-              onClick={() => {
-                setFilter(item);
-              }}
+              onClick={() => setFilter(item)}
             />
           </li>
         ))}
@@ -85,7 +83,7 @@ const Chart = () => {
             <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
               <stop
                 offset="5%"
-                stopColor={darkMode ? "#312e81" : "rgb(199 210 254)"}
+                stopColor={darkMode ? "#312e81" : "rgb(199 210 300)"}
                 stopOpacity={0.8}
               />
               <stop

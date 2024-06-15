@@ -1,19 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import ThemeContext from "../context/ThemeContext";
+import StockContext from "../context/StockContext";
 import Overview from "./Overview";
 import Details from "./Details";
 import Chart from "./Chart";
 import Header from "./Header";
-import StockContext from "../context/StockContext";
 import { fetchStockDetails, fetchQuote } from "../utils/api/stock-api";
 
 const Dashboard = () => {
   const { darkMode } = useContext(ThemeContext);
-
   const { stockSymbol } = useContext(StockContext);
 
   const [stockDetails, setStockDetails] = useState({});
-
   const [quote, setQuote] = useState({});
 
   useEffect(() => {
@@ -23,7 +21,7 @@ const Dashboard = () => {
         setStockDetails(result);
       } catch (error) {
         setStockDetails({});
-        console.log(error);
+        console.error("Error fetching stock details:", error);
       }
     };
 
@@ -33,7 +31,7 @@ const Dashboard = () => {
         setQuote(result);
       } catch (error) {
         setQuote({});
-        console.log(error);
+        console.error("Error fetching stock quote:", error);
       }
     };
 
